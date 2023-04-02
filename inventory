@@ -1,0 +1,11 @@
+[local]
+127.0.0.1
+
+[local:vars]
+ansible_connection=local
+
+[admin]
+
+[app]
+
+[web]

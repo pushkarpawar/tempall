@@ -1,0 +1,25 @@
+---
+- name: Update System
+  hosts: all
+  tasks: 
+    - name: Updating System
+      apt: 
+        upgrade: dist
+        update_cache: yes
+
+- name: Setting Up Node
+  hosts: all
+  roles:
+        - role: grzegorznowak.nvm_node
+          vars: 
+                 nvm_install_script_version: "0.38.0"
+                 nvm_user_name: "root"
+                 nvm_dir: "/var/lib/nvm" 
+                 nvm_node_version: "16.15.1"     
+                 nvm_install_globally: ["pm2"]
+                      
+- name: Updating NPM Version
+  hosts: all
+  tasks: 
+    - name: Running NPM Update
+      command: sudo install -g npm@8.13.1  
