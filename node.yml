@@ -22,4 +22,4 @@
   hosts: all
   tasks: 
     - name: Running NPM Update
-      command: sudo install -g npm@8.13.1  
+      command: sudo install npm -g npm@8.13.1  
