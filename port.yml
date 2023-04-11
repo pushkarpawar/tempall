@@ -1,0 +1,22 @@
+---
+- name: UpdateSystem
+  hosts: all
+  tasks:
+    - name: Enable Firewall
+      ufw:
+        state: enabled
+
+    - name: Allow SSH Traffic
+      ufw: 
+        rule: allow
+        name: OpenSSH
+
+    - name: Allow Nginx Traffic
+      ufw: 
+        rule: allow
+        name: Nginx Full
+
+    - name: Reload Firewall
+      ufw: 
+        state: reloaded
+
